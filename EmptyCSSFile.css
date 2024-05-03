@@ -1,0 +1,42 @@
+﻿* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    padding: 0 1.5%x;
+}
+
+
+.slider {
+    display: block;
+    margin-top: 50px;
+    width: 200px; 
+    height: 20px; 
+    transform: rotate(270deg); 
+    margin-right: 1px; 
+    -webkit-appearance: none;
+    appearance: none;
+    background: #d3d3d3;
+}
+
+section {
+    float: left;
+    margin: 0 1.5%;
+    width: 15%;
+}
+
+aside {
+    float: right;
+    margin: 0 1.5%;
+    width: 40%;
+}
+
+im {
+    float: left;
+    margin: 0 1.5%;
+    width: 40%;
+}
+
