@@ -3,28 +3,28 @@
     content.style.display = content.style.display === "none" ? "block" : "none";
 }
 
-
-//create a synth and connect it to the main output (your speakers)
+var cur = '';
 const s = new Tone.Synth({volume : -10}).toDestination();
 const synth = new Tone.PolySynth(Tone.Synth).toDestination();
 
 function startNote() {
 
-    // Get the note value from the input field with id 'noteInput'
+
     const noteDropdown = document.getElementById('noteDropdown');
     const selectedNote = noteDropdown.options[noteDropdown.selectedIndex].value;
 
-    // Trigger the attack with the specified note
+
     s.triggerAttack(selectedNote);
 }
 
-// Function to stop playing the note
+
 function stopNote() {
     s.triggerRelease();
 }
 
 function playDrum(id) {
     synth.triggerAttackRelease(document.getElementById(id).value, "3");
+    cur = id;
 }
 
 function randomizeSliders() {
@@ -53,7 +53,8 @@ function randomizeSliders() {
 
 function changePitch(id) {
     const newNote = document.getElementById(id).value
-    synth.set({ frequency: newNote });
+    if(id == cur)
+        {synth.set({ frequency: newNote });}
 
     idd = id.substring(0, 2) + "pitch";
 
